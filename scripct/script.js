@@ -29,22 +29,23 @@ nextEl.addEventListener("click", function(evt){
     finishBtn.classList.remove("display")
     nextEl.classList.toggle("display")
 }); 
-
 finishBtn.addEventListener("click",function(evt){
     evt.preventDefault();
-    const color = elColor.value
-    const animal = elAnimal.value
-    const room = elRoom.value
+    let color = elColor.value
+    let animal = elAnimal.value
+    let room = elRoom.value
+   
  elWrap.innerHTML =`<ul class="finish__list"> 
  <h2>Dear ${userName}</h2>
  <li> You see/consider your self: ${color}</li>, 
  <li> You see/consider others: ${animal}</li>,
  <li>When you thinking about "die" you feel: ${room}</li> </ul>`
+ localStorage.setItem("Name", `${userName}`)
+ localStorage.setItem("self", `${color}`)
+ localStorage.setItem("suround", `${animal}`)
+ localStorage.setItem("die", `${room}`)
  document.querySelector(".display").classList.toggle("diplay")
  finishBtn.classList.toggle("display")
 })
-
-
-
 
 
